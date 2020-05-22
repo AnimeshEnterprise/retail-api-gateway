@@ -1,0 +1,22 @@
+server:
+  port: 8099
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8088/eureka/
+  instance:
+    hostname: localhost
+
+spring:
+  application:
+    name: retail-api
+
+# Increase the Hystrix timeout to 60s (for all)
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
